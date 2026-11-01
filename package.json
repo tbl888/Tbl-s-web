@@ -1,0 +1,31 @@
+{
+  "name": "baotong-admin-auth",
+  "version": "1.0.0",
+  "description": "宝通环保设备公司 - 管理员认证系统",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute DB --file=./migrations/001_create_users_table.sql",
+    "db:seed": "wrangler d1 execute DB --file=./migrations/002_create_admin_user.sql",
+    "build": "wrangler deploy --dry-run"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "authentication",
+    "admin",
+    "security"
+  ],
+  "author": "宝通环保设备公司",
+  "license": "MIT",
+  "dependencies": {
+    "hono": "^3.12.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
