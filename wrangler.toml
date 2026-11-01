@@ -1,0 +1,38 @@
+# Cloudflare Workers 后台管理系统配置
+# 专业级安全认证系统
+
+name = "admin-auth-system"
+main = "workers/index.js"
+compatibility_date = "2026-10-30"
+compatibility_flags = ["nodejs_compat"]
+
+# KV 命名空间
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "79258a62130b4bfc94ae2ff6d9eafd91"  # 您已配置的 KV ID
+
+# D1 数据库
+[[d1_databases]]
+binding = "DB"
+database_name = "admin-users"
+database_id = "7c3ebad6-ca7f-4baa-b12c-1e7935b0c4b4"  # 您已配置的 D1 ID
+
+# 环境变量配置
+[env.production]
+KV_NAMESPACES = [
+  { binding = "SESSIONS", id = "production-kv-id" }
+]
+
+[env.staging]
+KV_NAMESPACES = [
+  { binding = "SESSIONS", id = "staging-kv-id" }
+]
+
+# 自定义域名路由（可选）
+# [[routes]]
+# pattern = "admin.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+# [[routes]]
+# pattern = "api.yourdomain.com/admin/*"
+# zone_name = "yourdomain.com"
