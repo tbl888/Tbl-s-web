@@ -1,0 +1,12 @@
+name = "baotong-environmental"
+pages_build_output_dir = ""
+compatibility_date = "2026-10-11"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "79258a62130b4bfc94ae2ff6d9eafd91"
+
+[[d1_databases]]
+binding = "DB"
+database_id = "7c3ebad6-ca7f-4baa-b12c-1e7935b0c4b4"
+database_name = "admin-users"
